@@ -1,0 +1,76 @@
+\documentclass[uplatex,a4paper,12pt,onecolumn,oneside,openany]{jsbook}
+
+
+% 設定ファイル
+\usepackage{mystyle}
+
+\title{
+{\Large 令和◯年度 卒業論文} \\[4cm]
+\LARGE 論文タイトル \\[4cm]
+}
+\author{宮崎大学 工学部 情報システム工学科\
+12345678 宮大もう\\
+\\
+指導教員 坂本眞人 准教授
+}
+\date{令和◯年◯月◯日}
+
+\begin{document}
+\maketitle
+
+\clearpage
+
+%%% 概要 %%%
+\renewcommand{\thepage}{\roman{page}}
+\renewcommand{\thepage}{\roman{page}}
+\include{abstract}
+
+%%% 目次 %%%
+
+{\makeatletter
+\let\ps@jpl@in\ps@empty
+\makeatother
+\pagestyle{plain}
+
+\tableofcontents
+\listoffigures
+\listoftables
+\pagestyle{fancy}
+\clearpage}
+
+
+%%%%%% 1. はじめに %%%%%%
+\include{hajimeni}
+
+%%%%%% 2. 関連研究 %%%%%%
+\include{senkou}
+
+%%%%%% 3. 提案手法 %%%%%%
+\include{teian}
+
+%%%%%% 4. 実行結果 %%%%%%
+\include{jikkou}
+
+%%%%%% 5. 評価 %%%%%%
+\include{hyouka}
+
+%%%%%% 6. 考察 %%%%%%
+\include{kousatsu}
+
+%%%%%% 7. おわりに %%%%%%
+\include{owarini}
+
+%%%%%% 謝辞 %%%%%%
+\newpage
+\phantomsection
+\addcontentsline{toc}{chapter}{謝辞}
+\include{thanks}
+
+%%%%%% 参考文献 %%%%%%
+\include{bibliography}
+
+%%%%%% 付録A %%%%%%
+\appendix
+\include{appendixA}
+
+\end{document}
