@@ -1,0 +1,106 @@
+\usepackage{amsmath}
+
+\usepackage{subfigmat} %usepackageでsubfigを宣言
+
+\usepackage{url}
+\usepackage{enumerate}
+
+% 画像
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float} % 画像の位置を自分で決める
+
+\usepackage{bm}  % for bmdefine
+\usepackage{amsmath} % bmatrix, pmatrix
+
+% 複数行統合
+\usepackage{multirow}
+
+% コメントアウト
+\usepackage{comment}
+
+% 余白設定
+\setlength{\textwidth}{136truemm}      % テキスト幅: 210-(37+18)=155mm
+\setlength{\fullwidth}{\textwidth}     % ページ全体の幅
+\setlength{\oddsidemargin}{37truemm}   % 左余白
+\addtolength{\oddsidemargin}{-1truein} % 左位置デフォルトから-1inch
+\setlength{\topmargin}{25truemm}       % 上余白
+\setlength{\textheight}{232truemm}     % テキスト高さ: 297-(30+30)=237mm
+\addtolength{\topmargin}{-1truein}     % 上位置デフォルトから-1inch
+
+% ハイパーリンク
+\usepackage[
+dvipdfmx, 
+  bookmarkstype=toc, 
+  colorlinks=false, % リンクに色をつけない設定
+  pdfborder={0 0 0}, 
+  bookmarks=true, 
+  bookmarksnumbered=true
+]{hyperref}
+\usepackage{pxjahyper}
+% 文字化け対策
+\AtBeginDvi{\special{pdf:tounicode EUC-UCS2}}
+
+% 連立方程式
+\usepackage{cases}
+
+% fancyの設定
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+
+\rhead{\thepage}
+
+\lhead{\leftmark}
+\setlength{\headheight}{16pt}
+%\renewcommand{\chaptermark}[1]{\markboth{第\ %\normalfont\thechapter\ 章~#1}{}}
+%\renewcommand{\sectionmark}[1]{\markleft{\thesection #1}{}}
+%\newcommand{\bs}{\symbol{'134}}
+%\newcommand{\Cmd}[1]{\texttt{\def\{{\char`\{}\def\}%{\char`\}}\bs#1}}
+%\lhead{\rightmark}
+\cfoot{} % フッダを表示しない
+
+% プログラム
+\usepackage{ascmac, here, txfonts, txfonts}
+\usepackage{listings, jlisting}
+\usepackage{color}
+
+%プログラム挿入の設定
+\lstset{
+	%プログラム言語(複数の言語に対応，C,C++も可)
+ 	language = C++,
+ 	%背景色と透過度
+ 	backgroundcolor={\color[gray]{.90}},
+ 	%枠外に行った時の自動改行
+ 	breaklines = true,
+ 	%自動開業後のインデント量(デフォルトでは20[pt])	
+ 	breakindent = 10pt,
+ 	%標準の書体
+ 	basicstyle = \ttfamily\scriptsize,
+ 	%basicstyle = {\small}
+ 	%コメントの書体
+ 	commentstyle = {\itshape \color[cmyk]{1,0.4,1,0}},
+ 	%関数名等の色の設定
+ 	classoffset = 0,
+ 	%キーワード(int, ifなど)の書体
+ 	keywordstyle = {\bfseries \color[cmyk]{0,1,0,0}},
+ 	%""で囲まれたなどの"文字"の書体
+ 	stringstyle = {\ttfamily \color[rgb]{0,0,1}},
+ 	%枠 "t"は上に線を記載, "T"は上に二重線を記載
+	%他オプション：leftline，topline，bottomline，lines，single，shadowbox
+ 	frame = TBrl,
+ 	%frameまでの間隔(行番号とプログラムの間)
+ 	framesep = 5pt,
+ 	%行番号の位置
+ 	numbers = left,
+	%行番号の間隔
+ 	stepnumber = 1,
+	%右マージン
+ 	%xrightmargin=0zw,
+ 	%左マージン
+	%xleftmargin=3zw,
+	%行番号の書体
+ 	numberstyle = \tiny,
+	%タブの大きさ
+ 	tabsize = 4,
+ 	%キャプションの場所("tb"ならば上下両方に記載)
+ 	captionpos = t
+}
